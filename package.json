@@ -11,6 +11,6 @@
     "start": "lerna run start",
     "build": "lerna run build",
     "serve": "lerna run serve",
-    "develop": "lerna run develop"
+    "develop": "lerna run dev"
   }
 }
