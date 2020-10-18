@@ -1,53 +1,44 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
+import styles from "../styles/Home.module.css";
+import { Box } from "@monorepo/components/Box";
+import { Button } from "@monorepo/components/Button";
+import { CustomInput, CustomPassword } from "@monorepo/components/Input";
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
+        <Box variant="large" bg="black" color="white">
+          Registration Form
+        </Box>
+        <Box flexWrap="wrap" flexDirection="column" mb={3}>
+          <Box color="goldPrimary">E-mail-Address</Box>
+          <CustomInput
+            type="text"
+            p={2}
+            placeholder="E-mail"
+            color="text.normal"
+            fontSize={3}
+          />
+        </Box>
+        <Box flexWrap="wrap" flexDirection="column" mb={3}>
+          <Box color="goldPrimary">Password</Box>
+          <CustomPassword
+            p={2}
+            placeholder="Password"
+            color="text.normal"
+            fontSize={3}
+          />
+        </Box>
+        <Box mt={3}>
+          <Button
+            bg="black"
+            color="goldPrimary"
+            p={3}
+            fontWeight="bold"
+            fontSize={3}
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+            Submit
+          </Button>
+        </Box>
       </main>
 
       <footer className={styles.footer}>
@@ -56,10 +47,10 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
-  )
+  );
 }
