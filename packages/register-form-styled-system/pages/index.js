@@ -1,8 +1,17 @@
+import React, { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import { Box } from "@monorepo/components/Box";
 import { Button } from "@monorepo/components/Button";
 import { CustomInput, CustomPassword } from "@monorepo/components/Input";
-export default function Home() {
+import { getRestaurants } from "services/restaurants";
+const Home = () => {
+  useEffect(() => {
+    const handleRestaurants = async () => {
+      const res = await getRestaurants();
+      console.log({ res });
+    };
+    handleRestaurants();
+  }, []);
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -53,4 +62,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
