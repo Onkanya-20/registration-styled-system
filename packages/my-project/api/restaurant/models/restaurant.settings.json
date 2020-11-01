@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "restaurants",
   "info": {
-    "name": "restaurant"
+    "description": "The Restaurant type description"
   },
   "options": {
     "increments": true,
@@ -13,10 +13,12 @@
     "name": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "description": "The name of the restaurant"
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "description": "The description of the restaurant."
     },
     "categories": {
       "via": "restaurants",
